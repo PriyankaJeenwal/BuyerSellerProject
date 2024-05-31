@@ -1,0 +1,267 @@
+{
+	"info": {
+		"_postman_id": "4cdf3fe3-7fe1-4849-a542-2e17acbbb9bf",
+		"name": "hospital",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34003903",
+		"_collection_link": "https://solar-eclipse-12629.postman.co/workspace/91eeeb78-fd38-4b42-9437-91e53b4d24e1/collection/34003903-4cdf3fe3-7fe1-4849-a542-2e17acbbb9bf?action=share&source=collection_link&creator=34003903"
+	},
+	"item": [
+		{
+			"name": "appointment",
+			"item": [
+				{
+					"name": "addAppointment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"disease\":\"fever\",\r\n    \"appintmentDate\":\"2024-06-15\",\r\n    \"userId\":1,\r\n    \"doctorId\":11,\r\n    \"description\":\"abc\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:9091/appointment/addAppointment",
+							"host": [
+								"localhost"
+							],
+							"port": "9091",
+							"path": [
+								"appointment",
+								"addAppointment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAppointmentById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9091/appointment/getAppointmentById/1",
+							"host": [
+								"localhost"
+							],
+							"port": "9091",
+							"path": [
+								"appointment",
+								"getAppointmentById",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9091/appointment/getAll",
+							"host": [
+								"localhost"
+							],
+							"port": "9091",
+							"path": [
+								"appointment",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "appBydisease",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:9091/appointment/getByDisease/viral",
+							"host": [
+								"localhost"
+							],
+							"port": "9091",
+							"path": [
+								"appointment",
+								"getByDisease",
+								"viral"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "getAppointmentbyUserId",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "deleteAppointment",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "GetAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9092/user/getUsers?pageSize=5&page=0",
+							"host": [
+								"localhost"
+							],
+							"port": "9092",
+							"path": [
+								"user",
+								"getUsers"
+							],
+							"query": [
+								{
+									"key": "pageSize",
+									"value": "5"
+								},
+								{
+									"key": "page",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getById",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "createUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 5,\r\n  \"name\": \"pooja\",\r\n  \"email\": \"p@gmail.com\",\r\n  \"password\": \"Abc@1234\",\r\n  \"role\": {\r\n   \r\n    \"name\": \"BUYER\"\r\n  \r\n  }\r\n \r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:9092/user/createUser",
+							"host": [
+								"localhost"
+							],
+							"port": "9092",
+							"path": [
+								"user",
+								"createUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "usersByRole",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9092/user/getUsersByRole?role=AGENT",
+							"host": [
+								"localhost"
+							],
+							"port": "9092",
+							"path": [
+								"user",
+								"getUsersByRole"
+							],
+							"query": [
+								{
+									"key": "role",
+									"value": "AGENT"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:9092/user/deleteUser?id=9",
+							"host": [
+								"localhost"
+							],
+							"port": "9092",
+							"path": [
+								"user",
+								"deleteUser"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "9"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateUser",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
